@@ -1,19 +1,115 @@
-☁ CloudGroup
-	•	Home
-	•	About
-	•	Contact
-Get In Touch
-Contact Us
-Have questions about our project? Reach out to any of our group members.
-We are a group of Cloud Computing students. For any enquiries related to our lab project, feel free to send us a message using the form or reach out through the contact details below.
-✉️ cloudgroup@university.edu.gh
-🏫 Department of Computer Science
-📍 Accra, Ghana
-🐙 github.com/cloudgroup/cloud-lab-group-project
-Your Name
-Email Address
-Subject
-Message
-Send Message
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudGroup – Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-© 2026 CloudGroup · Cloud Computing Practical Lab 1
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">☁ CloudGroup</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="section-label">Get In Touch</p>
+    <h1 class="section-title">Contact Us</h1>
+    <p class="section-sub">
+      Have questions about our project? Reach out to any of our group members.
+    </p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section>
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info">
+        <p>
+          We are a group of Cloud Computing students. For any enquiries related to
+          our lab project, feel free to send us a message using the form or reach
+          out through the contact details below.
+        </p>
+
+        <!-- ✏️ Replace with your real contact details -->
+        <div class="contact-detail">
+          <span>✉️</span>
+          <span>cloudgroup@university.edu.gh</span>
+        </div>
+        <div class="contact-detail">
+          <span>🏫</span>
+          <span>Department of Computer Science</span>
+        </div>
+        <div class="contact-detail">
+          <span>📍</span>
+          <span>Accra, Ghana</span>
+        </div>
+        <div class="contact-detail">
+          <span>🐙</span>
+          <span>github.com/cloudgroup/cloud-lab-group-project</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="e.g. John Doe" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="What is this about?" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Write your message here..."></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="handleSubmit()">Send Message</button>
+        <p id="form-feedback" style="margin-top:1rem; color: var(--accent); font-size:0.9rem;"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <span>CloudGroup</span> · Cloud Computing Practical Lab 1</p>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const feedback = document.getElementById('form-feedback');
+
+      if (!name || !email || !message) {
+        feedback.style.color = '#f87171';
+        feedback.textContent = 'Please fill in your name, email, and message.';
+        return;
+      }
+
+      feedback.style.color = 'var(--accent)';
+      feedback.textContent = `✅ Thanks, ${name}! Your message has been received.`;
+
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('subject').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
+
+</body>
+</html>
